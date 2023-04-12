@@ -1,4 +1,5 @@
 //freshfit ~ Upon this rock i will build my church
+//freshfit ~ Upon this rock i will build my church
 import 'dart:developer';
 import 'dart:core';
 import 'dart:async';
@@ -207,7 +208,7 @@ class _RutimetableState extends State<Rutimetable> {
 
   bool darkmode = false;
   var recent;
-  bool recentx = false;
+  bool recentx = true;
   bool salenote = false;
   bool notification = false;
   Future<InitializationStatus> _initGoogleMobileAds() {
@@ -1691,9 +1692,9 @@ sharedPreferences.setString('yoi', yoi.toString());
                                               fontSize: 15,
                                               color: text1,
                                               fontWeight: FontWeight.w600)),
-                                      Text("v1.0.8-Easteregg-release",
+                                      Text("v1.1.2-Easteregg-release",
                                           style: TextStyle(color: Colors.grey)),
-                                      Text("10 April 2023 at 17:42 EAT",
+                                      Text("11 April 2023 at 17:42 EAT",
                                           style: GoogleFonts.rubik(
                                             fontSize: 13,
                                             color: text1,
@@ -2283,7 +2284,7 @@ sharedPreferences.setString('yoi', yoi.toString());
                                     body: SingleChildScrollView(
                                         child: Column(children: [
 //card starts here
-                                      recentx == true
+                                     /* recentx == true
                                           ? const SizedBox()
                                           : Container(
                                               child: Stack(children: [
@@ -2312,7 +2313,7 @@ sharedPreferences.setString('yoi', yoi.toString());
                                                                       onTap:
                                                                           () async {
                                                                         //food2.reversed.where((op) => op['owner'].toString() == widget.me.toString()).take(1).toList()[0]["id"]
-                                                                        final SharedPreferences
+                                                                       /* final SharedPreferences
                                                                             sharedPreferences =
                                                                             await SharedPreferences.getInstance();
 
@@ -2323,14 +2324,14 @@ sharedPreferences.setString('yoi', yoi.toString());
                                                                               true);
                                                                                recentx = true;
                                                                         });
-                                                                       
+                                                                       */
                                                                       },
                                                                       child: Padding(
                                                                           padding: EdgeInsets.all(
                                                                               5.0),
                                                                           child: Icon(
                                                                               Icons.close,
-                                                                              color: text1)),
+                                                                              color: Colors.transparent)),
                                                                     )
                                                                   ],
                                                                 ),
@@ -2398,7 +2399,7 @@ sharedPreferences.setString('yoi', yoi.toString());
                                                                             quarterTurns:
                                                                                 90,
                                                                             child:
-                                                                                Positioned(
+                                                                                Container(
                                                                               child: Image.asset(
                                                                                 'assets/judegroceries-removebg-preview.png',
                                                                                 width: 200.0,
@@ -2495,7 +2496,7 @@ sharedPreferences.setString('yoi', yoi.toString());
                                                                                       ])),
                                                                                   RotatedBox(
                                                                                     quarterTurns: 125,
-                                                                                    child: Positioned(
+                                                                                    child: Container(
                                                                                       child: Image.asset(
                                                                                         'assets/rack2.png',
                                                                                         width: 200.0,
@@ -2511,145 +2512,9 @@ sharedPreferences.setString('yoi', yoi.toString());
                                                                               10),
                                                                     ]))),
                                               ]),
-                                            ),
+                                            ),*/
 
-                                      recentx 
-                                          ? recent.toString() ==
-                                                  food2.reversed
-                                                      .where((op) =>
-                                                          op['owner']
-                                                              .toString() ==
-                                                          widget.me.toString())
-                                                      .take(1)
-                                                      .toList()[0]["id"]
-                                                      .toString()
-                                              ? SizedBox()
-                                              : Container(
-
-                                                  //height:200,
-
-                                                  padding: EdgeInsets.all(8.0),
-                                                  child: Card(
-                                                      elevation: 0,
-                                                      color: darkmode
-                                                          ? Colors.grey.shade900
-                                                          : Colors
-                                                              .grey.shade200,
-                                                      child: Column(children: [
-                                                        Container(
-                                                          child: Row(
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .end,
-                                                            children: [
-                                                              InkWell(
-                                                                onTap:
-                                                                    () async {
-                                                                  //food2.reversed.where((op) => op['owner'].toString() == widget.me.toString()).take(1).toList()[0]["id"]
-                                                                  final SharedPreferences
-                                                                      sharedPreferences =
-                                                                      await SharedPreferences
-                                                                          .getInstance();
-
-                                                                  setState(() {
-                                                                    sharedPreferences.setString(
-                                                                        'recent',
-                                                                        food2
-                                                                            .reversed
-                                                                            .where((op) =>
-                                                                                op['owner'].toString() ==
-                                                                                widget.me.toString())
-                                                                            .take(1)
-                                                                            .toList()[0]["id"]
-                                                                            .toString());
-
-                                                                    recent = food2
-                                                                        .reversed
-                                                                        .where((op) =>
-                                                                            op['owner'].toString() ==
-                                                                            widget.me
-                                                                                .toString())
-                                                                        .take(1)
-                                                                        .toList()[
-                                                                            0][
-                                                                            "id"]
-                                                                        .toString();
-                                                                  });
-                                                                },
-                                                                child: Padding(
-                                                                    padding:
-                                                                        EdgeInsets.all(
-                                                                            5.0),
-                                                                    child: Icon(
-                                                                        Icons
-                                                                            .close,
-                                                                        color:
-                                                                            text1)),
-                                                              )
-                                                            ],
-                                                          ),
-                                                        ),
-
-                                                        //Container(height:20),
-
-                                                        Stack(children: [
-                                                          Container(
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .all(0.0),
-                                                              height: 128,
-                                                              width:
-                                                                  MediaQuery.of(
-                                                                          context)
-                                                                      .size
-                                                                      .width,
-                                                              child: Row(
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .spaceBetween,
-                                                                  children: [
-                                                                    Container(
-                                                                        height:
-                                                                            150,
-                                                                        padding:
-                                                                            EdgeInsets.all(
-                                                                                5.0),
-                                                                        width: MediaQuery.of(context).size.width *
-                                                                            .4,
-                                                                        child: Column(
-                                                                            children: [
-                                                                              Container(
-                                                                                padding: EdgeInsets.all(4.0),
-                                                                                child: Text(
-                                                                                  "Your Recent Order is being processed",
-                                                                                  style: GoogleFonts.lato(fontSize: 20, color: text1, fontWeight: FontWeight.bold),
-                                                                                ),
-                                                                              ),
-                                                                              Row(children: [
-                                                                                Text("# ${food2.reversed.where((op) => op['owner'].toString() == widget.me.toString()).take(1).toList()[0]["id"]}", style: TextStyle(color: Colors.orange)),
-                                                                              ])
-                                                                            ])),
-                                                                    RotatedBox(
-                                                                      quarterTurns:
-                                                                          125,
-                                                                      child:
-                                                                          Positioned(
-                                                                        child: Image
-                                                                            .asset(
-                                                                          'assets/rack2.png',
-                                                                          width:
-                                                                              200.0,
-                                                                          height:
-                                                                              150.0,
-                                                                        ),
-                                                                      ),
-                                                                    )
-                                                                  ])),
-                                                        ]),
-
-                                                        Container(height: 10),
-                                                      ])))
-                                          : SizedBox(),
+                                          
 
                                       //card starts here
                                       ListTile(
@@ -3365,7 +3230,7 @@ sharedPreferences.setString('yoi', yoi.toString());
                                                                             quarterTurns:
                                                                                 0,
                                                                             child:
-                                                                                Positioned(
+                                                                                Container(
                                                                               child: Image.asset(
                                                                                 'assets/CHISTES_HunterX-removebg-preview.png',
                                                                               ),
